@@ -9,5 +9,9 @@
   <% end %>
 
   <%= @user_info %>
-  <%= @repos %>
+  <ul>
+    <%= @repos.each do |repo| %>
+      <%= link_to repo.name, repo.html_url %>
+    <% end %>
+  </ul>
 </div>
