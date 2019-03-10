@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     binding.pry
     code = params[:code]
     response = Faraday.post("https://github.com/login/oauth/access_token") do |req|
-      req.body = { 'client_id': ENV['GITHUB_CLIENT_ID'], 'client_secret': ENV['GITHUB_CLIENT_SECRET'], 'code': code, 'redirect_uri': 'http://localhost:3000/auth' }
+      req.body = { 'client_id': ENV['GITHUB_CLIENT_ID'], 'client_secret': ENV['GITHUB_CLIENT_SECRET'], 'code': code }
       req.headers['Accept'] = 'application/json'
     end
 
