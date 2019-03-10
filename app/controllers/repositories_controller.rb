@@ -4,7 +4,6 @@ class RepositoriesController < ApplicationController
     @resp = Faraday.get("https://github.com/login/oauth/authorize") do |req|
       req.params['oauth_token'] = session[:token]
     end
-    binding.pry
   end
 
 end
